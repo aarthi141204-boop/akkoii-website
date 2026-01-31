@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Akkoii ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ffd1dc,#fff1c1);
+  text-align:center;
+  color:#444;
+}
+
+/* Header */
+header{
+  padding:60px 20px 30px;
+}
+
+.title{
+  font-size:3rem;
+}
+
+/* Akkoii clickable */
+.akkoii{
+  color:#c94f7c;
+  cursor:pointer;
+  display:inline-block;
+  animation:pulse 1.5s infinite;
+}
+
+/* Red heart */
+.heart{
+  color:red;
+  font-size:2.2rem;
+  margin-left:5px;
+  animation:heartBeat 1.3s infinite;
+}
+
+@keyframes heartBeat{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+.hint{
+  margin-top:10px;
+  color:#8b3a5a;
+  animation:bounce 1.2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(8px)}
+}
+
+/* Image */
+.image-wrap{
+  display:flex;
+  justify-content:center;
+  margin:25px 0 10px;
+}
+
+.image-wrap img{
+  max-width:280px;
+  width:80%;
+  height:auto;
+  border-radius:20px;
+  background:white;
+  padding:6px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* Popup */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+
+.popup-content{
+  background:#fff;
+  padding:25px 28px;
+  border-radius:25px;
+  max-width:420px;
+  max-height:80vh;
+  overflow-y:auto;
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+  animation:pop .4s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+#quoteText{
+  font-size:1.15rem;
+  font-style:italic;
+  color:#c94f7c;
+  line-height:1.6;
+  text-align:left;
+}
+
+/* Scroll hint */
+.scroll-hint{
+  text-align:center;
+  color:#6a1b9a;
+  font-size:0.9rem;
+  margin:8px 0;
+  animation:scrollBounce 1.2s infinite;
+}
+
+@keyframes scrollBounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(6px)}
+}
+
+.close-btn{
+  margin-top:20px;
+  padding:8px 22px;
+  border:none;
+  background:#c94f7c;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="title">
+    My dear 
+    <span class="akkoii" onclick="showQuote()">Akkoii</span>
+    <span class="heart">❤️</span>
+  </div>
+  <div class="hint">👆 Click Akkoii 👆</div>
+</header>
+
+<!-- Image -->
+<div class="image-wrap">
+  <img src="1000024953.png" alt="My Akkoii">
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <p id="quoteText"></p>
+    <button class="close-btn" onclick="closePopup()">Close 💗</button>
+  </div>
+</div>
+
+<script>
+const message = `
+<span style="color:#6a1b9a;font-weight:600;font-size:1.2rem;"> My Dear A...❤️<br></span>
+You are my best ever gift… 💝<br><br>
+With or without conversion, my love will always be the same.<br><br>
+Anyway, past is past.<br><br>
+Thank you for being there for me 🤍<br><br>
+
+Instead of searching for gold,<br>
+I realized I had lost a diamond 💎<br><br>
+
+<hr style="border:none;border-top:1px dashed #f3b6c8;margin:12px 0;"><br>
+
+<div class="scroll-hint">⬇️ Scroll down ⬇️</div>
+
+<span style="color:#6a1b9a;font-weight:600;font-size:1.2rem;">
+Sweet quotes for you 💜
+</span><br><br>
+
+You are tired, but you still smile.<br>
+You are hurting, but you still care.<br>
+You are silent, but you are strong.<br><br>
+
+You are carrying pain that no one sees,<br>
+yet you wake up every day and try again.<br><br>
+
+You are not weak —<br>
+you are a strong woman with a brave heart 🤍
+`;
+
+function showQuote(){
+  document.getElementById("quoteText").innerHTML = message;
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
